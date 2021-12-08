@@ -1,26 +1,31 @@
 import React, { useEffect, useState } from "react";
 import ThermometerComponent from "react-thermometer-component";
-import { API_URL } from "../config";
+import firebase from "../firebaseConfig";
 
 const Thermometer = () => {
-  const [heat, setHeat] = useState("");
+  const [temp, setTemp] = useState("");
   useEffect(() => {
-    fetch(`${API_URL}/thermometer`, {
-      method: "GET",
-    })
-      .then((x) => x.json())
-      .then((gelen) => setHeat(gelen[0]));
+    setTimeout(() => {
+      firebase
+        .database()
+        .ref("temp")
+        .on("value", (temp) => {
+          setTemp(temp.toJSON());
+        });
+    }, 2000);
   }, []);
   return (
-    <ThermometerComponent
-      theme="dark"
-      value={heat.heat}
-      max="35"
-      steps="6"
-      format="°C"
-      size="large"
-      height="250"
-    />
+    <div className="mt-12 lg:mt-72">
+      <ThermometerComponent
+        theme="dark"
+        value={temp}
+        max="35"
+        steps="6"
+        format="°C"
+        size="large"
+        height="250"
+      />
+    </div>
   );
 };
 

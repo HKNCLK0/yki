@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-import { API_URL } from "../config";
+import firebase from "../firebaseConfig";
 
 const mapStyles = {
   border: "4px solid #FF6148",
@@ -11,13 +11,23 @@ const mapStyles = {
 };
 
 function MapContainer(props) {
-  const [data, setData] = useState({});
+  const [lat, setLat] = useState("");
+  const [long, setLong] = useState("");
   useEffect(() => {
-    fetch(`${API_URL}/coordinate`, {
-      method: "GET",
-    })
-      .then((gelenData) => gelenData.json())
-      .then((coor) => setData(coor[0]));
+    setTimeout(() => {
+      firebase
+        .database()
+        .ref("lat")
+        .on("value", (latitude) => {
+          setLat(latitude.toJSON());
+        });
+      firebase
+        .database()
+        .ref("long")
+        .on("value", (longitute) => {
+          setLong(longitute.toJSON());
+        });
+    }, 2000);
   }, []);
   return (
     <Map
@@ -30,7 +40,7 @@ function MapContainer(props) {
       }}
     >
       <Marker
-        position={{ lat: data.latitude, lng: data.longitude }}
+        position={{ lat: lat, lng: long }}
         name={"Kenyatta International Convention Centre"}
       />
     </Map>

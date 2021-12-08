@@ -7,6 +7,7 @@ module.exports = {
         background: "#222020",
         textColor: "#f0ffff",
         bgMain: "#2c3e50",
+        lowBatteryRed: "#FF6148",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],

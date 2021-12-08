@@ -1,6 +1,6 @@
 import React from "react";
 import { FaReact } from "react-icons/fa";
-import { SiFirebase, SiArduino } from "react-icons/si";
+import { SiFirebase, SiArduino, SiTailwindcss } from "react-icons/si";
 const Footer = () => {
   return (
     <footer className="lg:pt-4">
@@ -26,6 +26,12 @@ const Footer = () => {
             href="https://arduino.cc/"
           >
             <SiArduino size={30} color="#f0ffff" />
+          </a>
+          <a
+            className="transform transition hover:scale-110"
+            href="https://tailwindcss.com/"
+          >
+            <SiTailwindcss size={30} color="#f0ffff" />
           </a>
         </div>
       </div>

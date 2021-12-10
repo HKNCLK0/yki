@@ -1,5 +1,7 @@
 # Yer Kontrol Istasyonu
 
->npm install
+- Hakan Çelik
+- Emirhan Irmak
+- Mert Özkaya
 
 ## Teşekkürler Orhan Celep & Yavuz Öztürk & 3D Design Technologies LTI

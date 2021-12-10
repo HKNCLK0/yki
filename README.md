@@ -6,4 +6,4 @@ Site : [yerkontrolistasyonu.software](https://yerkontrolistasyonu.software)
 - Emirhan Irmak
 - Mert Özkaya
 
-## Teşekkürler Orhan Celep & Yavuz Öztürk & 3D Design Technologies LTI
+## Teşekkürler Orhan Celep & Yavuz Öztürk & Özer Koç & 3D Design Technologies LTI

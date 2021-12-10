@@ -2,8 +2,8 @@
 
 Site : [yerkontrolistasyonu.software](https://yerkontrolistasyonu.software)
 
-- Hakan Çelik
 - Emirhan Irmak
+- Hakan Çelik
 - Mert Özkaya
 
 ## Teşekkürler Orhan Celep & Yavuz Öztürk & Özer Koç & 3D Design Technologies LTI
